@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Getting server updates</h1>
+<div id="result"></div>
+
+<script>
+if(typeof(EventSource) !== "undefined") {
+    var source = new EventSource("http://localhost:8152/users/sse");
+ /*
+    source.onmessage = function(event) {
+        document.getElementById("result").innerHTML += event.data + "<br>";
+    };
+*/
+    source.addEventListener('open',(e)=>{
+    	console.log(`SSE Connected \n ${JSON.stringify(source)}`);
+    },false);
+
+    source.addEventListener('message',(e)=>{
+    	alert(`YES!`);
+
+    	console.log(data);
+
+
+    },false);
+} else {
+    document.getElementById("result").innerHTML = "Sorry, your browser does not support server-sent events...";
+}
+</script>
+
+</body>
+
+<!-- Mirrored from www.w3schools.com/html/tryit.asp?filename=tryhtml5_sse by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 09 Oct 2015 06:48:41 GMT -->
+</html>
+
+-
