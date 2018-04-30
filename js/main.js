@@ -2,7 +2,7 @@
 
 
 var url = 'https://poraeh-pay.herokuapp.com';
-var authKey = JSON.parse(localStorage.getItem('authKey')).userApi.trim();
+var authKey = JSON.parse(localStorage.getItem('authKey')).userApi.trim() || {userApi:'not available'};
 
 var registration = {
 	getPhone : ()=>{
