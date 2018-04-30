@@ -1,7 +1,7 @@
 "use strict"
 
 
-var url = 'http://localhost:8152';
+var url = 'https://poraeh-pay.herokuapp.com';
 var authKey = JSON.parse(localStorage.getItem('authKey')).userApi.trim();
 
 var registration = {
