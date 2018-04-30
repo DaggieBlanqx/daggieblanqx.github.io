@@ -2,6 +2,7 @@
 
 
 var url = 'https://poraeh-pay.herokuapp.com';
+var authKey = JSON.parse(localStorage.getItem('authKey')).userApi.trim();
 
 var registration = {
 	getPhone : ()=>{
@@ -45,6 +46,7 @@ var registration = {
 
 		fetch(the_url,{
 			method:'POST',
+			mode: 'no-cors',
 			headers : new Headers({
 				'Accept': 'application/json',
 				'Content-Type': 'application/json'
@@ -108,6 +110,7 @@ var login = {
 
 		fetch(the_url,{
 			method:'POST',
+			mode: 'no-cors',
 			headers : new Headers({
 				'Accept': 'application/json',
 				'Content-Type': 'application/json'
@@ -188,6 +191,7 @@ var sendMoney = {
 		var the_url = `${url}/users/profile/public`;
 		fetch(the_url,{
 			method:'POST',
+			mode: 'no-cors',
 			headers : new Headers({
 				'Accept': 'application/json',
 				'Content-Type': 'application/json'
@@ -236,6 +240,7 @@ var sendMoney = {
 		fetch(the_url,
 		{
 			method:'POST',
+			mode: 'no-cors',
 			headers:new Headers({
 				'Accept':'application/json',
 				'Content-Type':'application/json'
